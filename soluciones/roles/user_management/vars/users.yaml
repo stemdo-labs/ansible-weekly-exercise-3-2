@@ -1,0 +1,30 @@
+---
+users:
+  - nombre: david
+    grupos: admin, devops
+    contra: {{ david_pass }}
+  
+  - nombre: nacho
+    grupos: admin, devops
+    contra: {{ nacho_pass }}
+
+  - nombre: pilar
+    grupos: developer, qa
+    contra: {{ pilar_pass }}
+
+  - nombre: elisa
+    grupos: developer, qa
+    contra: {{ elisa_pass }}
+
+  - nombre: pablo
+    grupos: developer, qa
+    contra: {{ pablo_pass }}
+
+  - nombre: rafa
+    grupos: devops, qa
+    contra: {{ rafa_pass }}
+
+  - nombre: luis
+    grupos: devops, qa
+    contra: {{ luis_pass }}
+...
