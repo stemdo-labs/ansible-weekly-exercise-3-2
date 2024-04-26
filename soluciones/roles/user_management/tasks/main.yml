@@ -1,2 +1,16 @@
 ---
-# tasks file for user_management
+- name: Cargar lista de usuarios
+  include_vars: 
+    file: users.yaml
+
+- name: Crear grupos
+  group:
+    name: "{{ item }}"
+  loop: "{{ groups }}"
+
+- name: Crear usuarios
+  user:
+    name: "{{ item.nombre }}"
+    groups: "{{ item.grupos}}"
+    password: "{{ item.contra }}"
+  loop: "{{ users }}"
