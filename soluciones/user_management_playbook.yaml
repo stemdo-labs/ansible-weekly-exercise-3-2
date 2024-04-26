@@ -1,0 +1,7 @@
+---
+# tasks file for dynamic_motd
+- name: Creacion de usuarios y grupos de usuario
+  hosts: grupomayor
+  become: yes
+  roles:
+    - user_management
