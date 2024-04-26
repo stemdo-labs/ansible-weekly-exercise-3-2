@@ -1,16 +1,24 @@
 ---
-- name: Cargar lista de usuarios
-  include_vars: 
-    file: users.yaml
+- name: Cargar lista de grupos
+  include_vars:
+    file: groups.yaml
 
 - name: Crear grupos
   group:
     name: "{{ item }}"
-  loop: "{{ groups }}"
+  loop: "{{ grupos }}"
+
+- name: Cargar lista de usuarios
+  include_vars:
+    file: users.yaml
+    
+- name: Cargar lista de usuarios
+  include_vars:
+    file: passwords.yaml
 
 - name: Crear usuarios
   user:
     name: "{{ item.nombre }}"
     groups: "{{ item.grupos}}"
     password: "{{ item.contra }}"
-  loop: "{{ users }}"
+  loop: "{{ usuarios }}"
